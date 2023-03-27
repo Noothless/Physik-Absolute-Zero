@@ -1,0 +1,81 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{epsfig}
+\usepackage{parskip}
+\usepackage[ansinew]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage{float}
+\usepackage[free-standing-units=true]{siunitx} % for consistent handling of SI units
+\usepackage[colorlinks=true, pdfstartview=FitV, linkcolor=blue, citecolor=blue, urlcolor=blue]{hyperref} % enable links
+
+\setlength{\parindent}{0pt}
+
+\newcommand{\m}[1]
+{\mathrm{#1}}
+
+\title{Experiment 9: absolute zero temperature}
+\author{Noa Sendlhofer, Christian Leser}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+    
+    % The abstract is a short summary of the experiment. It should
+    % motivate the reader to actually read the whole paper. The length of
+    % the abstract should not exceed 10 lines. Every section of the report
+    % should be represented by one or two sentences. This includes the
+    % results and the conclusions. There is no need to keep the reader in
+    % suspense over the findings that you want to present. Often the
+    % abstract is written last.
+\end{abstract}
+
+%TODO
+% Background to 90SR and Y90?
+% discussion - what is required for better precision?
+% interpret y dosis calculation
+
+\tableofcontents
+
+\input{src/1_introduction.tex}
+
+\input{src/2_experiment.tex}
+
+\input{src/3_results.tex}
+
+\newpage
+
+\input{src/4_data_analysis.tex}
+
+\input{src/5_discussion.tex}
+
+\input{src/6_conclusion.tex}
+
+\input{src/7_appendix.tex}
+
+
+\begin{thebibliography}{99}
+
+\bibitem{STH}
+Stuart Hunt \& Associates Ltd., Radioactive Material Safety Data Sheet Strontium-90, \href{https://www.stuarthunt.com/de/cache/modules_elements/103/Strontium-90-Sealed.pdf}{Website}
+
+\bibitem{Sato2003}
+M. Sato, B. E. Hubbard, A. J. Sievers, B. Ilic, D. A. Czaplewski, and H.G. Craighead, Phys. Rev. Lett. \textbf{90}, 044102 (2003).
+
+\bibitem{Cross2004}
+M. C. Cross, A. Zumdieck, R. Lifshitz, and J. L. Rogers, Phys. Rev. Lett. \textbf{93}, 224101 (2004).
+
+\bibitem{Manual}
+Manual to experiment 41 beta decay (2022).
+
+
+\end{thebibliography}
+
+\end{document}
