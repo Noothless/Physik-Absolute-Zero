@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.12) (preloaded format=pdflatex 2023.1.11)  27 MAR 2023 17:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.12) (preloaded format=pdflatex 2023.1.11)  27 MAR 2023 17:58
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -428,22 +428,22 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \tf@toc=\write4
 \openout4 = `270323_Noa-Sendlhofer_Christian-Leser_absolute-zero.toc'.
 
- (src/1_introduction.tex) (src/2_experiment.tex) (src/3_results.tex) [1
+ (src/1_introduction.tex) (src/2_experiment.tex) (src/3_methods.tex) (src/4_discussion.tex) (src/5_conclusion.tex) (src/6_appendix.tex) [1
 
-{C:/Users/chris/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] (src/4_data_analysis.tex) (src/5_discussion.tex) (src/6_conclusion.tex) (src/7_appendix.tex) [2] (270323_Noa-Sendlhofer_Christian-Leser_absolute-zero.aux)
+{C:/Users/chris/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2] (270323_Noa-Sendlhofer_Christian-Leser_absolute-zero.aux)
 Package rerunfilecheck Info: File `270323_Noa-Sendlhofer_Christian-Leser_absolute-zero.out' has not changed.
-(rerunfilecheck)             Checksum: 34435ED8AF31A09E2BFAE749836C7C63;654.
+(rerunfilecheck)             Checksum: BF613BB76560E45C8ECF36C2EB7834BC;654.
  ) 
 Here is how much of TeX's memory you used:
- 14696 strings out of 476406
- 285204 string characters out of 2789567
- 1858787 words of memory out of 3000000
- 34849 multiletter control sequences out of 15000+600000
+ 14691 strings out of 476406
+ 285025 string characters out of 2789567
+ 1856787 words of memory out of 3000000
+ 34847 multiletter control sequences out of 15000+600000
  519765 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 71i,6n,77p,634b,885s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 71i,6n,77p,634b,992s stack positions out of 10000i,1000n,20000p,200000b,80000s
 <C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb>
-Output written on 270323_Noa-Sendlhofer_Christian-Leser_absolute-zero.pdf (2 pages, 66790 bytes).
+Output written on 270323_Noa-Sendlhofer_Christian-Leser_absolute-zero.pdf (2 pages, 65192 bytes).
 PDF statistics:
  81 PDF objects out of 1000 (max. 8388607)
  16 named destinations out of 1000 (max. 500000)
