@@ -1,6 +1,91 @@
 \section{Results}\label{sec_results}
 
-    The first step
+    In the first step of this experiment, the pressure sensor has to be calibrated at known pressures and temperatures.
+    The result of this calibration is presented in Fig.~\ref{fig_calibration}
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[]{src/images/calibration.png}
+        \caption{Calibration of the pressure sensor: A linear fit through $(U_L,p_l)$ and $(U_t,p_t)$ determines the slope $C$. $p_0$ shows the y-intersect at voltage $U_0 = 0$}
+        \label{fig_calibration}
+    \end{figure}
+
+    $p_0$ can be found by entering a pair of known values into eq.~\ref{eq_pressure}, such as $(U_t,p_t)$.
+
+    \begin{align}
+        p_0 = p_t - C U_t \label{eq_p0}
+    \end{align}
+
+    Using the slope $C$ and y-offset $p_0$, we determined in this first step, we can calculate the pressure
+    of any sensor reading using formula \ref{eq_pressure}.
+
+    \begin{align}
+        p(U) = p_0 + CU \label{eq_pressure}
+    \end{align}
+
+    To determine the uncertainties in Eq.~\ref{eq_pressure}, we first have to calculate the errors in $p_0$, $C$ and $U$.
+    Using the gaussian error propagation, we can then determine the error of the entire equation.
+
+
+    From the manufacturer's datasheet, we know that the linearity of the sensor is guaranteed up to $\pm 0.05\%$ full scale.
+    This means that the sensor signal error is at most $0.05\%$ of $150\si{\milli\volt}$, thus $0.075\si{\milli\volt}$.
+
+    Furthermore, it has to be taken into account, that the temperature of the sensor may vary from when
+    it was calibrated and when the measurement was made. We can assume a voltage difference of $\pm 0.08\si{\milli\volt}/\si{\celsius}$ at $p = 0$.
+    The slope of this curve can vary by $\pm 0.1\% \si{\celsius}$
+    This is the uncertainty calculation for $\Delta U$:
+
+    \begin{align}
+        \Delta U &= 0.075 \si{\milli\volt} + 0.08 \frac{\si{\milli\volt}}{1 \si{\celsius} \pm 0.1 \% \si{\celsius}}\\
+        &= 0.075 \si{\milli\volt} + 0.08 \si{\milli\volt} + 8 \cdot 10^{-5} \si{\milli\volt} \label{eq_dlta_u}\\
+        \bf \Delta U &= \bf \pm 0.15508 ~\si{\bf\milli\volt} \label{dlta_u}
+    \end{align}
+
+    The errors in eq.~\ref{eq_dlta_u} were calculated using the gaussian error propagation.
+
+    $\Delta C$ can be determined in a similar way:
+
+    \begin{align}
+        C &= \frac{p_L - p_t}{U_L - U_t}\\
+        \Delta C &= \sqrt{ \left(\frac{\partial C}{\partial p_L} \Delta p_L \right)^2 +
+                        \left(\frac{\partial C}{\partial p_t} \Delta p_t \right)^2 +
+                        \left(\frac{\partial C}{\partial U_L} \Delta U_L \right)^2 +
+                        \left(\frac{\partial C}{\partial U_t} \Delta U_t \right)^2 } \label{eq_dlta_c}
+    \end{align}
+
+    Using the errors for $U$ determined in eq. \ref{dlta_u}, as well as $\Delta p_t = \pm 0.1 \si{\milli\bar}$ given in the manual and $\Delta p_L = ???$,
+    we can determine a value for $\Delta C$ using eq.~\ref{eq_dlta_c}:
+
+    \begin{align}
+        \bf \Delta C = 1.155 \label{dlta_c}
+    \end{align}
+
+    Lastly, we have to determine the error for $\Delta p_0$. The error can be calculated in the same way as before, using the equation \ref{eq_p0}.
+
+    \begin{align}
+        \Delta p_0 &= \sqrt{ \left(\frac{\partial p_0}{\partial C} \Delta C \right)^2 +
+                            \left(\frac{\partial p_0}{\partial U_t} \Delta U_t \right)^2 +
+                            \Delta p_t^2}\\
+        \bf \Delta p_0 &= \bf 119.001 ~\si{\bf\pascal} \label{dlta_p0}
+    \end{align}
+
+    We now have all the values for calculating $\Delta p(U)$. Using eq. \ref{eq_pressure} we can determine the following error propagation:
+
+    \begin{align}
+        \Delta p(U) &= \sqrt{ \left(\frac{\partial p}{\partial C} \Delta C \right)^2 +
+                            \left(\frac{\partial p}{\partial U} \Delta U \right)^2 +
+                            \Delta p_0^2}\\
+        &= \sqrt{ \left( U \Delta C \right)^2 +
+                \left( C \Delta U \right)^2 + 
+                \Delta p_0^2} \label{eq_dlta_p}
+    \end{align}
+
+    In this following chapter the results from the determination of absolute zero are presented.
+    Using eq.~\ref{eq_pressure} the resulting pressures were calculated from the raw sensor data.
+
+    \begin{align}
+        p(U_E) = 
+    \end{align}
 
     % Results
     % This paragraph is where you present the results from your
