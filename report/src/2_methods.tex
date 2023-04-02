@@ -20,7 +20,9 @@
     \begin{figure}[H]
         \centering
         \includegraphics[]{src/images/experimental_setup.png}
-        \caption{experimental setup: further explain}
+        \caption{experimental setup: A glass bulb filled with helium is connected to a controller and a system of tubes, in turn connecting to a pump, a helium bottle and a baloon.
+        The controller outputs a voltage linearly related to the applied pressure, the pump can reduce the pressure in the bulb, the helium bottle is the helium supply and the balloon acts as a pressure regulator between the bulb and the bottle.
+        Multiple valves controll the gas flow within the tubes.}
         \label{fig_setup}
     \end{figure}
 
@@ -43,3 +45,20 @@
     As mentioned before, the closed system acts like a thermometer.
     Therefore, we can cool down the helium filled bulb using liquid nitrogen, read off the voltage and calculate the corresponding temperature of liquid nitrogen.
     In this step, the expansion of the glass bulb must be taken into account as well.
+
+    The error sources in this experiment can be classified:
+    \begin{itemize}
+        \item In our analysis, it is assumed that the temperature in the room stays the same during the whole process.
+        Needless to say that this does not have to be the case: small fluctuations happen naturally.
+        As a result, corrupted data could occur during the calibration of the controller.
+        Furthermore, the temperature was read off an analog thermometer leading to an uncertainty caused by the limits of the human eye.
+        \item Next to the temperature, the pressure does also fluctuate over time.
+        The boiling point of water depends on the pressure.
+        Hence, when heating the helium to the boiling point of water, a deviation in the temperature used in calculations below and the real temperature could exist.
+        As with temperature, the pressure was also read off an analog measurement device and this value could slightly differ from the real pressure.
+        \item Given by the producer of the controller is a certain nonlinearity in the conversion of pressure to its corresponding voltage.
+        \item The pump does not create an absolute vacuum and small amounts of air could stay in the glass bulb.
+        This would have the biggest impact on the temperature measurement of liquid nitrogen as parts of the air would liquify and the linearity resulting from the ideal gas law eq.~\ref{eq_igl} would not be maintained.
+        \item When heating and cooling the gas in the bulb, the glass itself could need more time to evenly distribute the temperature resulting in an uneven change in the gas volume, therefore changing the pressure.
+        This would affect the difference between the linear approach and the exact calculation of $t_0$ and $t_{LN2}$.
+    \end{itemize}
