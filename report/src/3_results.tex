@@ -6,17 +6,17 @@
     \begin{figure}[H]
         \centering
         \includegraphics[]{src/images/calibration.png}
-        \caption{Calibration of the pressure sensor: A linear fit through $(U_L,p_l)$ and $(U_t,p_t)$ determines the slope $C$. $p_0$ shows the y-intersect at voltage $U_0 = 0$}
+        \caption{Calibration of the pressure sensor: A linear fit through $(U_L,p_L)$ and $(U_t,p_t)$ determines the slope $C$. $p_0$ shows the y-intersect at voltage $U_0 = 0$}
         \label{fig_calibration}
     \end{figure}
 
-    $p_0$ can be found by entering a pair of known values into eq.~\ref{eq_pressure}, such as $(U_t,p_t)$.
+    $p_0$ can be found by entering a pair of known values into eq.~\ref{eq_pressure}, such as $(U_t,p_t)$. %p0 and C can be found by entering two pairs of known values into eq.. (such as ... ...) and then solving the linear system of equations.
 
     \begin{align}
         p_0 = p_t - C U_t \label{eq_p0}
     \end{align}
 
-    Using the slope $C$ and y-offset $p_0$, we determined in this first step, we can calculate the pressure
+    Using the slope $C$ and y-offset $p_0$, which we determined in this first step, we can calculate the pressure
     of any sensor reading using formula \ref{eq_pressure}.
 
     \begin{align}
@@ -27,7 +27,7 @@
     Using the gaussian error propagation, we can then determine the error of the entire equation.
 
 
-    From the manufacturer's datasheet, we know that the linearity of the sensor is guaranteed up to $\pm 0.05\%$ full scale.
+    From the manufacturer's datasheet, we know that the linearity of the sensor is guaranteed up to $\pm 0.05\%$ full scale. % of the full scale?
     This means that the sensor signal error is at most $0.05\%$ of $150\si{\milli\volt}$, thus $0.075\si{\milli\volt}$.
 
     Furthermore, it has to be taken into account, that the temperature of the sensor may vary from when
@@ -57,7 +57,7 @@
         \bf \Delta C = \pm 1.155 \label{dlta_c}
     \end{align}
 
-    Lastly, we have to determine the error for $\Delta p_0$. The error can be calculated in the same way as before, using the equation \ref{eq_p0}.
+    Lastly, we have to determine the error for $\Delta p_0$. The error can be calculated in the same way as before, using the equation \ref{eq_p0}. % On the base of eqref ?
     \begin{align}
         \Delta p_0 &= \sqrt{ \left(\frac{\partial p_0}{\partial C} \Delta C \right)^2 +
                             \left(\frac{\partial p_0}{\partial U_t} \Delta U_t \right)^2 +
@@ -65,7 +65,7 @@
         \bf \Delta p_0 &= \bf \pm 119.001 ~\si{\bf\pascal} \label{dlta_p0}
     \end{align}
 
-    We now have all the values for calculating $\Delta p(U)$. Using eq. \ref{eq_pressure} we can determine the following error propagation:
+    We now have all the values for calculating $\Delta p(U)$. Using eq. \ref{eq_pressure} we can determine the following error propagation: % On the base of eqref eq_pressure ?
     \begin{align}
         \Delta p(U) &= \sqrt{ \left(\frac{\partial p}{\partial C} \Delta C \right)^2 +
                             \left(\frac{\partial p}{\partial U} \Delta U \right)^2 +
@@ -82,9 +82,11 @@
         \label{fig_abs_zero}
     \end{figure}
 
-    In this following chapter the results from the determination of absolute zero are presented.
+    %Maybe a bit more context about why we show this figure, ex: as the properties are connected linearly, we get an approximative value for t_0. More factors have to be taken into account to determine the exact value of t_0.
+
+    In this following chapter the results from the determination of absolute zero are presented. %in this following part? ist ja kein neues Kapitel
     Using eq.~\ref{eq_pressure} the resulting pressures were calculated from the raw sensor data.
-    With the derived eq.~\ref{eq_dlta_p} we can then calculate the errors $\Delta p_K, \Delta p_E$.
+    With the derived eq.~\ref{eq_dlta_p} we can then calculate the errors $\Delta p_K, \Delta p_E$. %With the equation derived in eqref...?
     \begin{align}
         p(U_E) &= 69814 ~\si{\pascal}\\
         p(U_K) &= 94535 ~\si{\pascal}\\
@@ -114,7 +116,7 @@
     The error calculation for $t_0$ was again accomplished using the gaussian error propagation.
     Due to the fact that $t_E$, as well as $t_K$, could be determined very precisely, we did not take
     the uncertainties of these values into account in the following error calculation.
-    Therefore the only variables with errors are $p_E$, as well as $p_K$.
+    Therefore the only variables with errors are $p_E$, as well as $p_K$. % ... whose error margins were considered are...
     \begin{align}
         \Delta t_0 &= \sqrt{ \left(\frac{\partial t_0}{\partial p_E} \Delta p_E \right)^2 +
                             \left(\frac{\partial t_0}{\partial p_K} \Delta p_K \right)^2 }\\
@@ -130,7 +132,7 @@
     \end{align}
 
     To calculate the temperature $t_N$ of liquid nitrogen we can use our known value of $t_0$ and solve
-    the following equation for $t'_{LN2}$.
+    the following equation for $t'_{LN2}$. %Solve the following linear approach?
     \begin{align}
         \frac{p_E}{t_E - t_0} \approx& \; \frac{p_N}{t'_{LN2} - t_0}\\
         t'_{LN2} \approx& \; \frac{p_N}{p_E}(t_E - t_0) + t_0
@@ -147,7 +149,7 @@
     \end{align}
 
     Using the gaussian error propagation the uncertainty for $t_{LN2}$ was calculated. As stated above
-    the uncertainties for the variables $t_L$ and $t_E$ are not considered in this calculation.
+    the uncertainties for the variables $t_L$ and $t_E$ are not considered in this calculation. % in this calculation either.
     \begin{align}
         \Delta A =& \; \sqrt{ \left(\frac{\partial A}{\partial p_E} \Delta p_E \right)^2 +
                             \left(\frac{\partial A}{\partial p_N} \Delta p_N \right)^2 +
