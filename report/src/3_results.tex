@@ -51,10 +51,10 @@
                         \left(\frac{\partial C}{\partial U_t} \Delta U_t \right)^2 } \label{eq_dlta_c}
     \end{align}
 
-    Using the errors for $U$ determined in eq. \ref{dlta_u}, as well as $\Delta p_t = \pm 0.1 \si{\milli\bar}$ given in the manual and $\Delta p_L = \textbf{???}$,
+    Using the errors for $U$ determined in eq. \ref{dlta_u}, as well as $\Delta p_t = \pm 0.1 \si{\milli\bar}$ given in the manual and $\Delta p_L = 200~\si{\pascal}$,
     we can determine a value for $\Delta C$ using eq.~\ref{eq_dlta_c}:
     \begin{align}
-        \bf \Delta C = \pm 1.155 \label{dlta_c}
+        \bf \Delta C = \pm 1.8779 \label{dlta_c}
     \end{align}
 
     Lastly, we have to determine the error for $\Delta p_0$. The error can be calculated in the same way as before, using the equation \ref{eq_p0}. % On the base of eqref ?
@@ -62,7 +62,7 @@
         \Delta p_0 &= \sqrt{ \left(\frac{\partial p_0}{\partial C} \Delta C \right)^2 +
                             \left(\frac{\partial p_0}{\partial U_t} \Delta U_t \right)^2 +
                             \Delta p_t^2}\\
-        \bf \Delta p_0 &= \bf \pm 119.001 ~\si{\bf\pascal} \label{dlta_p0}
+        \bf \Delta p_0 &= \bf \pm 131.407 ~\si{\bf\pascal} \label{dlta_p0}
     \end{align}
 
     We now have all the values for calculating $\Delta p(U)$. Using eq. \ref{eq_pressure} we can determine the following error propagation: % On the base of eqref eq_pressure ?
@@ -88,10 +88,10 @@
     Using eq.~\ref{eq_pressure} the resulting pressures were calculated from the raw sensor data.
     With the derived eq.~\ref{eq_dlta_p} we can then calculate the errors $\Delta p_K, \Delta p_E$. %With the equation derived in eqref...?
     \begin{align}
-        p(U_E) &= 69814 ~\si{\pascal}\\
+        p(U_E) &= 69630 ~\si{\pascal}\\
         p(U_K) &= 94535 ~\si{\pascal}\\
-        \Delta p_E &= \pm 176.6 ~\si{\pascal} \label{val_pE}\\
-        \Delta p_K &= \pm 196.1 ~\si{\pascal} \label{val_pK}
+        \Delta p_E &= \pm 205.62 ~\si{\pascal} \label{val_pE}\\
+        \Delta p_K &= \pm 248.23 ~\si{\pascal} \label{val_pK}
     \end{align}
 
     As described above the exact value for $t_0$ has to take into account the remaining gas
@@ -110,7 +110,7 @@
     When entering the results from eq.~\ref{val_pE} and~\ref{val_pK}, as well as $t_K$ and $t_L$ into eq.~\ref{eq_t0},
     we get the following result for $t_0$:
     \begin{align}
-        t_0 = -272.31~\si{\celsius} \label{val_t0}
+        t_0 = -273.53~\si{\celsius} \label{val_t0}
     \end{align}
 
     The error calculation for $t_0$ was again accomplished using the gaussian error propagation.
@@ -121,7 +121,7 @@
         \Delta t_0 &= \sqrt{ \left(\frac{\partial t_0}{\partial p_E} \Delta p_E \right)^2 +
                             \left(\frac{\partial t_0}{\partial p_K} \Delta p_K \right)^2 }\\
         \Delta t_0 &= \pm 0.4427195~\si{\celsius} \label{dlta_t0}\\
-        \bf t_0 &= \bf -272.31 \pm 0.44272~\si{\bf\celsius} \label{res_t0}
+        \bf t_0 &= \bf -273.53 \pm 0.44272~\si{\bf\celsius} \label{res_t0}
     \end{align}
 
     In the last part of the experiment, the apparatus was used as a thermometer, to determine the 
