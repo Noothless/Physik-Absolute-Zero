@@ -20,8 +20,8 @@
     \begin{figure}[H]
         \centering
         \includegraphics[]{src/images/experimental_setup.png}
-        \caption{experimental setup: A glass bulb filled with helium is connected to a controller and a system of tubes, in turn connecting to a pump, a helium bottle and a baloon.
-        The controller outputs a voltage linearly related to the applied pressure, the pump can reduce the pressure in the bulb, the helium bottle is the helium supply and the balloon acts as a pressure regulator between the bulb and the bottle.
+        \caption{experimental setup: A glass bulb filled with helium is connected to a sensor and a system of tubes, in turn connecting to a pump, a helium bottle and a baloon.
+        The sensor outputs a voltage linearly related to the applied pressure, the pump can reduce the pressure in the bulb, the helium bottle is the helium supply and the balloon acts as a pressure regulator between the bulb and the bottle.
         Multiple valves control the gas flow within the tubes.}
         \label{fig_setup}
     \end{figure}
@@ -50,13 +50,13 @@
     \begin{itemize}
         \item In our analysis, it is assumed that the temperature in the room stays the same during the whole process.
         Needless to say that this does not have to be the case: small fluctuations happen naturally.
-        As a result, corrupted data could occur during the calibration of the controller.
+        As a result, corrupted data could occur during the calibration of the sensor.
         Furthermore, the temperature was read off an analog thermometer leading to an uncertainty caused by the limits of the human eye.
         \item Next to the temperature, the pressure does also fluctuate over time.
         The boiling point of water depends on the pressure.
         Hence, when heating the helium to the boiling point of water, a deviation in the temperature used in calculations below and the real temperature could exist.
         As with temperature, the pressure was also read off an analog measurement device and this value could slightly differ from the real pressure.
-        \item Given by the producer of the controller is a certain nonlinearity in the conversion of pressure to its corresponding voltage.
+        \item The manufacturer of the sensor has defined a certain nonlinearity in the conversion of pressure to its corresponding voltage.
         \item The pump does not create an absolute vacuum and small amounts of air could stay in the glass bulb.
         This would have the biggest impact on the temperature measurement of liquid nitrogen as parts of the air would liquify and the linearity resulting from the ideal gas law eq.~\ref{eq_igl} would not be maintained.
         \item When heating and cooling the gas in the bulb, the glass itself could need more time to evenly distribute the temperature resulting in an uneven change in the gas volume, therefore changing the pressure.

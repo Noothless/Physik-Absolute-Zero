@@ -40,7 +40,8 @@
         \bf \Delta U &= \bf \pm 0.15508 ~\si{\bf\milli\volt} \label{dlta_u}
     \end{align}
 
-    The errors in eq.~\ref{eq_dlta_u} were calculated using the gaussian error propagation.
+    The errors in eq.~\ref{eq_dlta_u} were calculated using the gaussian error propagation. The full calculations of this error please refer
+    to the jupyter notebook given here. %LINK GITHUB !!!!
 
     $\Delta C$ can be determined in a similar way:
     \begin{align}
@@ -57,7 +58,8 @@
         \bf \Delta C = \pm 1.8779 \label{dlta_c}
     \end{align}
 
-    Lastly, we have to determine the error for $\Delta p_0$. The error can be calculated in the same way as before, using the equation \ref{eq_p0}. % On the base of eqref ?
+    Lastly, we have to determine the error for $\Delta p_0$. The error can be calculated in the same way as before, based on equation \ref{eq_p0}.
+    Due to the fact that the calculated sensor error $\Delta U$ is full scale, it can be assumed for all sensor readings $U_i$.
     \begin{align}
         \Delta p_0 &= \sqrt{ \left(\frac{\partial p_0}{\partial C} \Delta C \right)^2 +
                             \left(\frac{\partial p_0}{\partial U_t} \Delta U_t \right)^2 +
@@ -65,7 +67,7 @@
         \bf \Delta p_0 &= \bf \pm 131.407 ~\si{\bf\pascal} \label{dlta_p0}
     \end{align}
 
-    We now have all the values for calculating $\Delta p(U)$. Using eq. \ref{eq_pressure} we can determine the following error propagation: % On the base of eqref eq_pressure ?
+    We now have all the values for calculating $\Delta p(U)$. Based on eq. \ref{eq_pressure} we can determine the following error propagation: % On the base of eqref eq_pressure ?
     \begin{align}
         \Delta p(U) &= \sqrt{ \left(\frac{\partial p}{\partial C} \Delta C \right)^2 +
                             \left(\frac{\partial p}{\partial U} \Delta U \right)^2 +
@@ -81,7 +83,10 @@
         \caption{Determination of absolute zero: Linear fit through $(t_E, p_E)$ and $(t_K, p_K)$ until $p = 0$ is reached.}
         \label{fig_abs_zero}
     \end{figure}
-
+    Fig.~\ref{fig_abs_zero} is a visual representation of how the value for $t_0$ was obtained. Measuring the pressure of the Helium gas at two precisely
+    defined temperatures will give us two points on a temperature/pressure graph. The y-intersection of the linear fit through these points will give us an approximative value for $t_0$.
+    To get a more precise value, we have to take into account multiple factors like the expansion of the glass bulb under temperature changes, 
+    as well as the influence of unevenly heated gas in the connecting tube between the bulb and the sensor.
     %Maybe a bit more context about why we show this figure, ex: as the properties are connected linearly, we get an approximative value for t_0. More factors have to be taken into account to determine the exact value of t_0.
 
     In this following chapter the results from the determination of absolute zero are presented. %in this following part? ist ja kein neues Kapitel
@@ -131,8 +136,8 @@
         p_N = 19635 \si{\pascal}
     \end{align}
 
-    To calculate the temperature $t_N$ of liquid nitrogen we can use our known value of $t_0$ and solve
-    the following equation for $t'_{LN2}$. %Solve the following linear approach?
+    To calculate the temperature of liquid nitrogen we can use our known value of $t_0$ and solve
+    the following equation for $t'_{LN2}$. This will only give us an approximate value, by simply solving a linear approach.
     \begin{align}
         \frac{p_E}{t_E - t_0} \approx& \; \frac{p_N}{t'_{LN2} - t_0}\\
         t'_{LN2} \approx& \; \frac{p_N}{p_E}(t_E - t_0) + t_0
@@ -149,7 +154,7 @@
     \end{align}
 
     Using the gaussian error propagation the uncertainty for $t_{LN2}$ was calculated. As stated above
-    the uncertainties for the variables $t_L$ and $t_E$ are not considered in this calculation. % in this calculation either.
+    the uncertainties for the variables $t_L$ and $t_E$ are not considered in this calculation either.
     \begin{align}
         \Delta A =& \; \sqrt{ \left(\frac{\partial A}{\partial p_E} \Delta p_E \right)^2 +
                             \left(\frac{\partial A}{\partial p_N} \Delta p_N \right)^2 +
