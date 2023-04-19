@@ -29,19 +29,11 @@
 
     From the manufacturer's datasheet, we know that the linearity of the sensor is guaranteed up to $\pm 0.05\%$ full scale. % of the full scale?
     This means that the sensor signal error is at most $0.05\%$ of $150\si{\milli\volt}$, thus $0.075\si{\milli\volt}$.
-
-    Furthermore, it has to be taken into account, that the temperature of the sensor may vary from when
-    it was calibrated and when the measurement was made. We can assume a voltage difference of $\pm 0.08\si{\milli\volt}/\si{\celsius}$ at $p = 0$.
-    The slope of this curve can vary by $\pm 0.1\% \si{\celsius}$
-    This is the uncertainty calculation for $\Delta U$:
     \begin{align}
-        \Delta U &= 0.075 \si{\milli\volt} + 0.08 \frac{\si{\milli\volt}}{1 \si{\celsius} \pm 0.1 \% \si{\celsius}}\\
-        &= 0.075 \si{\milli\volt} + 0.08 \si{\milli\volt} + 8 \cdot 10^{-5} \si{\milli\volt} \label{eq_dlta_u}\\
-        \bf \Delta U &= \bf \pm 0.16 ~\si{\bf\milli\volt} \label{dlta_u}
+        \bf \Delta U &= \bf \pm 0.08 ~\si{\bf\milli\volt} \label{dlta_u}
     \end{align}
 
-    The errors in eq.~\ref{eq_dlta_u} were calculated using the gaussian error propagation. Please refer to our jupyter notebook \cite{GitHub}, 
-    for the full calculations of all the values and error propagations presented in this chapter.   %LINK GITHUB !!!!
+    Please refer to our jupyter notebook \cite{GitHub}, for the full calculations of all the values and error propagations presented in this chapter.   %LINK GITHUB !!!!
 
     $\Delta C$ can be determined in a similar way, based on eq.~\ref{eq_c}:
     \begin{align}
@@ -55,7 +47,7 @@
     we can determine a value for $\Delta C$ using eq.~\ref{eq_dlta_c}:
     \begin{align}
         \Delta C &= \pm 1.878 \label{dlta_c}\\
-        \bf C &= \bf 709 \pm 2
+        \bf C &= \bf 709 \pm 2 ~\si{\bf\pascal/\bf\volt}
     \end{align}
 
     Lastly, we have to determine the error for $\Delta p_0$. The error can be calculated in the same way as before, based on equation \ref{eq_p0}.
@@ -64,7 +56,7 @@
         \Delta p_0 &= \sqrt{ \left(\frac{\partial p_0}{\partial C} \Delta C \right)^2 +
                             \left(\frac{\partial p_0}{\partial U_t} \Delta U_t \right)^2 +
                             \Delta p_t^2}\\
-        \Delta p_0 &= \pm 131 ~\si{\pascal} \label{dlta_p0}\\
+        \Delta p_0 &= \pm 81 ~\si{\pascal} \label{dlta_p0}\\
         \bf p_0 &= \bf (26.7 \pm 0.1) ~\si{\bf\kilo\pascal}
     \end{align}
 
@@ -93,7 +85,7 @@
     Using eq.~\ref{eq_pressure} the resulting pressures were calculated from the raw sensor data.
     With the derived eq.~\ref{eq_dlta_p} we can then calculate the errors $\Delta p_K, \Delta p_E$. %With the equation derived in eqref...?
     \begin{align}
-        p(U_E) &= (69.8 \pm 0.2) ~\si{\kilo\pascal} \label{val_pE}\\
+        p(U_E) &= (69.8 \pm 0.1) ~\si{\kilo\pascal} \label{val_pE}\\
         p(U_K) &= (94.5 \pm 0.2) ~\si{\kilo\pascal} \label{val_pK}
     \end{align}
 
@@ -123,8 +115,8 @@
     \begin{align}
         \Delta t_0 &= \sqrt{ \left(\frac{\partial t_0}{\partial p_E} \Delta p_E \right)^2 +
                             \left(\frac{\partial t_0}{\partial p_K} \Delta p_K \right)^2 }\\
-        \Delta t_0 &= \pm 3.53~\si{\celsius} \label{dlta_t0}\\
-        \bf t_0 &= \bf (-276 \pm 4)~\si{\bf\celsius} \label{res_t0}
+        \Delta t_0 &= \pm 2.45~\si{\celsius} \label{dlta_t0}\\
+        \bf t_0 &= \bf (-275.9 \pm 2.45)~\si{\bf\celsius} \label{res_t0}
     \end{align}
 
     In the last part of the experiment, the apparatus was used as a thermometer, to determine the 
@@ -157,10 +149,10 @@
         \Delta A =& \; \sqrt{ \left(\frac{\partial A}{\partial p_E} \Delta p_E \right)^2 +
                             \left(\frac{\partial A}{\partial p_N} \Delta p_N \right)^2 +
                             \left(\frac{\partial A}{\partial t_0} \Delta t_0 \right)^2 }\\
-        =& \; 3.33~\si{\pascal/\celsius}\\
+        =& \; 2.30~\si{\pascal/\celsius}\\
         \Delta t_{LN2} =& \; \sqrt{ \left(\frac{\partial t_{LN2}}{\partial A} \Delta A \right)^2 +
                                     \left(\frac{\partial t_{LN2}}{\partial t_0} \Delta t_0 \right)^2 +
                                     \left(\frac{\partial t_{LN2}}{\partial p_N} \Delta p_N \right)^2 }\\
-        =& \; 3.74~\si{\celsius}\\
-        \bf t_{LN2} =& \; \bf (-199 \pm 4) ~\si{\bf\celsius} \label{res_tN}
+        =& \; 2.56~\si{\celsius}\\
+        \bf t_{LN2} =& \; \bf (-198.5 \pm 2.56) ~\si{\bf\celsius} \label{res_tN}
     \end{align}
